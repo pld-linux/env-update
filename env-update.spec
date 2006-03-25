@@ -7,6 +7,7 @@ Group:		Base
 Source0:	http://distfiles.gentoo.org/distfiles/rc-scripts-%{version}.tar.bz2
 # Source0-md5:	3ef9ae479847d474c33d7d54f4912e77
 Patch0:		%{name}.patch
+Patch1:		%{name}-cflags.patch
 BuildRequires:	gawk-devel
 Requires:	gawk
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -21,11 +22,13 @@ loads.
 %prep
 %setup -q -n rc-scripts-%{version}
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__make} -C src/filefuncs \
 	CC="%{__cc}" \
-	LD="%{__ld}"
+	CFLAGS="%{rpmcflags}" \
+	LD="%{__ld}" 
 
 %install
 rm -rf $RPM_BUILD_ROOT
