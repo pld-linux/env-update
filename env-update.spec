@@ -1,5 +1,5 @@
-Summary:	env-update
-Name:		env-update
+Summary:	env-update - create /etc/profile.env from /etc/env.d files
+Name:		env-update - tworzenie /etc/profile.env z plików /etc/env.d
 Version:	1.6.14
 Release:	0.2
 License:	GPL v2
@@ -18,6 +18,14 @@ This is env-update rip from gentoo's baselayout.
 env-update creates /etc/profile.env file from /etc/env.d files, so
 your shell is able to read initial env quickly even at high system
 loads.
+
+%description -l pl
+Ten pakiet zawiera narzêdzie env-update wyci±gniête z podstawowych
+narzêdzi gentoo.
+
+env-update tworzy plik /etc/profile.env z plików /etc/env.d, dziêki
+czemu pow³oka jest w stanie szybko wczytaæ pocz±tkowe ¶rodowisko nawet
+przy du¿ym obci±¿eniu systemu.
 
 %prep
 %setup -q -n rc-scripts-%{version}
@@ -43,5 +51,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_sbindir}/*
-%{_libdir}/filefuncs.so
+%attr(755,root,root) %{_libdir}/filefuncs.so
 %{_libexecdir}/*.awk
