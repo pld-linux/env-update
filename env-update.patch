@@ -90,3 +90,14 @@
  
  	# Get our environment variables
  	SVCDIR = ENVIRON["SVCDIR"]
+--- rc-scripts-1.6.14/src/awk/genenviron.awk~	2006-04-30 14:29:39.116790228 +0300
++++ rc-scripts-1.6.14/src/awk/genenviron.awk	2006-04-30 14:30:43.608236656 +0300
+@@ -29,7 +29,7 @@
+ 		if (x in TMPENVFILES) {
+ 		
+ 			if ((isfile(TMPENVFILES[x])) &&
+-			    (TMPENVFILES[x] !~ /((\.(sh|c|bak))|\~)$/)) {
++			    (TMPENVFILES[x] !~ /((\.(sh|c|bak|rpm(new|save|orig)))|\~)$/)) {
+ 
+ 				ENVCOUNT++
+ 
