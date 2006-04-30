@@ -2,7 +2,7 @@ Summary:	env-update - create /etc/profile.env from /etc/env.d files
 Summary(pl):	env-update - tworzenie /etc/profile.env z plików /etc/env.d
 Name:		env-update
 Version:	1.6.14
-Release:	0.6
+Release:	0.7
 License:	GPL v2
 Group:		Base
 Source0:	http://distfiles.gentoo.org/distfiles/rc-scripts-%{version}.tar.bz2
@@ -44,11 +44,12 @@ przy du¿ym obci±¿eniu systemu.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_libdir},%{_libexecdir},%{_sbindir},/var/cache}
+install -d $RPM_BUILD_ROOT{%{_libdir},%{_libexecdir},%{_sbindir},%{_sysconfdir},/var/cache}
 install src/filefuncs/filefuncs.so $RPM_BUILD_ROOT%{_libdir}
 install -p src/awk/{functions.awk,genenviron.awk} $RPM_BUILD_ROOT%{_libexecdir}
 install sbin/env-update.sh $RPM_BUILD_ROOT%{_sbindir}/env-update
 touch $RPM_BUILD_ROOT/var/cache/envcache
+touch $RPM_BUILD_ROOT%{_sysconfdir}/profile.env
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -59,3 +60,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/filefuncs.so
 %{_libexecdir}/*.awk
 %ghost /var/cache/envcache
+%ghost %{_sysconfdir}/profile.env
