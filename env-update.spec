@@ -11,6 +11,7 @@ Patch0:		%{name}.patch
 Patch1:		%{name}-cflags.patch
 BuildRequires:	gawk-devel
 Requires:	gawk
+Requires:	rc-scripts
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_exec_prefix	/
