@@ -1,0 +1,11 @@
+--- rc-scripts-1.6.14/src/filefuncs/Makefile~	2003-04-06 18:28:27.000000000 +0200
++++ rc-scripts-1.6.14/src/filefuncs/Makefile	2006-03-25 17:55:00.000000000 +0100
+@@ -6,7 +6,7 @@
+ all: $(TARGETS)
+ 
+ filefuncs.o: filefuncs.c
+-	$(CC) -shared -Wall -DHAVE_CONFIG_H -c -O -fPIC -I/usr/include/awk $^
++	$(CC) -shared -Wall -DHAVE_CONFIG_H -c $(CFLAGS) -fPIC -I/usr/include/awk $^
+ 
+ filefuncs.so: filefuncs.o
+ 	$(LD) -o $@ -shared $^
