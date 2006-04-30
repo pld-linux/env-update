@@ -73,8 +73,8 @@
 -		-f /lib/rcscripts/awk/functions.awk \
 -		-f /lib/rcscripts/awk/genenviron.awk
 +	gawk \
-+		-f /usr/lib/functions.awk \
-+		-f /usr/lib/genenviron.awk
++		-f /lib/functions.awk \
++		-f /lib/genenviron.awk
  fi
  
 -
@@ -86,7 +86,7 @@
  BEGIN {
  
 -	extension("/lib/rcscripts/filefuncs.so", "dlload")
-+	extension("/usr/lib/filefuncs.so", "dlload")
++	extension("/lib/filefuncs.so", "dlload")
  
  	# Get our environment variables
  	SVCDIR = ENVIRON["SVCDIR"]

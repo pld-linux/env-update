@@ -2,7 +2,7 @@ Summary:	env-update - create /etc/profile.env from /etc/env.d files
 Summary(pl):	env-update - tworzenie /etc/profile.env z plików /etc/env.d
 Name:		env-update
 Version:	1.6.14
-Release:	0.2
+Release:	0.4
 License:	GPL v2
 Group:		Base
 Source0:	http://distfiles.gentoo.org/distfiles/rc-scripts-%{version}.tar.bz2
@@ -12,6 +12,8 @@ Patch1:		%{name}-cflags.patch
 BuildRequires:	gawk-devel
 Requires:	gawk
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_exec_prefix	/
 
 %description
 This is env-update rip from gentoo's baselayout.
