@@ -1,5 +1,6 @@
 Summary:	env-update - create /etc/profile.env from /etc/env.d files
-Name:		env-update - tworzenie /etc/profile.env z plików /etc/env.d
+Summary(pl):	env-update - tworzenie /etc/profile.env z plików /etc/env.d
+Name:		env-update
 Version:	1.6.14
 Release:	0.2
 License:	GPL v2
@@ -36,7 +37,7 @@ przy du¿ym obci±¿eniu systemu.
 %{__make} -C src/filefuncs \
 	CC="%{__cc}" \
 	CFLAGS="%{rpmcflags}" \
-	LD="%{__ld}" 
+	LD="%{__ld}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
