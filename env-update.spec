@@ -17,6 +17,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_exec_prefix	/
 %define		_libdir		/lib
 %define		_libexecdir	/lib
+%define		_sbindir	/sbin
 
 %description
 This is env-update rip from gentoo's baselayout.
