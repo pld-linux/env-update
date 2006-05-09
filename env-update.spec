@@ -15,6 +15,8 @@ Requires:	rc-scripts
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_exec_prefix	/
+%define		_libdir		/lib
+%define		_libexecdir	/lib
 
 %description
 This is env-update rip from gentoo's baselayout.
