@@ -90,8 +90,8 @@
  
  	# Get our environment variables
  	SVCDIR = ENVIRON["SVCDIR"]
---- rc-scripts-1.6.14/src/awk/genenviron.awk~	2006-04-30 14:29:39.116790228 +0300
-+++ rc-scripts-1.6.14/src/awk/genenviron.awk	2006-04-30 14:30:43.608236656 +0300
+--- rc-scripts-1.6.14/src/awk/genenviron.awk	2006-04-30 14:30:43.608236656 +0300
++++ rc-scripts-1.6.14/src/awk/genenviron.awk	2006-09-01 02:12:10.772056818 +0300
 @@ -29,7 +29,7 @@
  		if (x in TMPENVFILES) {
  		
@@ -101,3 +101,12 @@
  
  				ENVCOUNT++
  
+@@ -160,7 +160,7 @@
+ 	print "" >> (CSHPROFILE)
+ 
+ 
+-	pipe = "bash " ENVCACHE
++	pipe = "sh " ENVCACHE
+ 	while ((pipe | getline) > 0) {
+ 
+ 		sub(/=/, "='")
