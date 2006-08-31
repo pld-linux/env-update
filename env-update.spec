@@ -2,7 +2,7 @@ Summary:	env-update - create /etc/profile.env from /etc/env.d files
 Summary(pl):	env-update - tworzenie /etc/profile.env z plików /etc/env.d
 Name:		env-update
 Version:	1.6.14
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Base
 Source0:	http://distfiles.gentoo.org/distfiles/rc-scripts-%{version}.tar.bz2
@@ -22,9 +22,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 This is env-update rip from gentoo's baselayout.
 
-env-update creates /etc/profile.env file from /etc/env.d files, so
-your shell is able to read initial env quickly even at high system
-loads.
+env-update creates /etc/profile.env and /etc/csh.env from the contents of
+/etc/env.d/, so your shell is able to read initial env quickly even at high
+system loads.
 
 %description -l pl
 Ten pakiet zawiera narzêdzie env-update wyci±gniête z podstawowych
@@ -52,7 +52,7 @@ install src/filefuncs/filefuncs.so $RPM_BUILD_ROOT%{_libdir}
 install -p src/awk/{functions.awk,genenviron.awk} $RPM_BUILD_ROOT%{_libexecdir}
 install sbin/env-update.sh $RPM_BUILD_ROOT%{_sbindir}/env-update
 touch $RPM_BUILD_ROOT/var/cache/envcache
-touch $RPM_BUILD_ROOT%{_sysconfdir}/profile.env
+touch $RPM_BUILD_ROOT%{_sysconfdir}/{profile,csh}.env
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -67,3 +67,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_libexecdir}/*.awk
 %ghost /var/cache/envcache
 %ghost %{_sysconfdir}/profile.env
+%ghost %{_sysconfdir}/csh.env
