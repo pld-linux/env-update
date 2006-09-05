@@ -2,7 +2,7 @@ Summary:	env-update - create /etc/profile.env from /etc/env.d files
 Summary(pl):	env-update - tworzenie /etc/profile.env z plików /etc/env.d
 Name:		env-update
 Version:	1.6.14
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		Base
 Source0:	http://distfiles.gentoo.org/distfiles/rc-scripts-%{version}.tar.bz2
@@ -10,6 +10,7 @@ Source0:	http://distfiles.gentoo.org/distfiles/rc-scripts-%{version}.tar.bz2
 Patch0:		%{name}.patch
 Patch1:		%{name}-cflags.patch
 BuildRequires:	gawk-devel
+BuildRequires:	rpmbuild(macros) >= 1.316
 Requires:	gawk
 Requires:	rc-scripts
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -22,9 +23,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 This is env-update rip from gentoo's baselayout.
 
-env-update creates /etc/profile.env and /etc/csh.env from the contents of
-/etc/env.d/, so your shell is able to read initial env quickly even at high
-system loads.
+env-update creates /etc/profile.env and /etc/csh.env from the contents
+of /etc/env.d/, so your shell is able to read initial env quickly even
+at high system loads.
 
 %description -l pl
 Ten pakiet zawiera narzêdzie env-update wyci±gniête z podstawowych
@@ -58,7 +59,7 @@ touch $RPM_BUILD_ROOT%{_sysconfdir}/{profile,csh}.env
 rm -rf $RPM_BUILD_ROOT
 
 %post
-%{_sbindir}/env-update
+%env_update
 
 %files
 %defattr(644,root,root,755)
