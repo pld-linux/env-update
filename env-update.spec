@@ -2,7 +2,7 @@ Summary:	env-update - create /etc/profile.env from /etc/env.d files
 Summary(pl):	env-update - tworzenie /etc/profile.env z plików /etc/env.d
 Name:		env-update
 Version:	1.6.14
-Release:	3
+Release:	4
 License:	GPL v2
 Group:		Base
 Source0:	http://distfiles.gentoo.org/distfiles/rc-scripts-%{version}.tar.bz2
@@ -59,7 +59,7 @@ touch $RPM_BUILD_ROOT%{_sysconfdir}/{profile,csh}.env
 rm -rf $RPM_BUILD_ROOT
 
 %post
-%env_update
+%{_sbindir}/env-update
 
 %files
 %defattr(644,root,root,755)
