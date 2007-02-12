@@ -1,5 +1,5 @@
 Summary:	env-update - create /etc/profile.env from /etc/env.d files
-Summary(pl.UTF-8):   env-update - tworzenie /etc/profile.env z plików /etc/env.d
+Summary(pl.UTF-8):	env-update - tworzenie /etc/profile.env z plików /etc/env.d
 Name:		env-update
 Version:	1.6.14
 Release:	4
