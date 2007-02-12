@@ -1,5 +1,5 @@
 Summary:	env-update - create /etc/profile.env from /etc/env.d files
-Summary(pl):	env-update - tworzenie /etc/profile.env z plików /etc/env.d
+Summary(pl.UTF-8):   env-update - tworzenie /etc/profile.env z plikÃ³w /etc/env.d
 Name:		env-update
 Version:	1.6.14
 Release:	4
@@ -27,13 +27,13 @@ env-update creates /etc/profile.env and /etc/csh.env from the contents
 of /etc/env.d/, so your shell is able to read initial env quickly even
 at high system loads.
 
-%description -l pl
-Ten pakiet zawiera narzêdzie env-update wyci±gniête z podstawowych
-narzêdzi gentoo.
+%description -l pl.UTF-8
+Ten pakiet zawiera narzÄ™dzie env-update wyciÄ…gniÄ™te z podstawowych
+narzÄ™dzi gentoo.
 
-env-update tworzy plik /etc/profile.env z plików /etc/env.d, dziêki
-czemu pow³oka jest w stanie szybko wczytaæ pocz±tkowe ¶rodowisko nawet
-przy du¿ym obci±¿eniu systemu.
+env-update tworzy plik /etc/profile.env z plikÃ³w /etc/env.d, dziÄ™ki
+czemu powÅ‚oka jest w stanie szybko wczytaÄ‡ poczÄ…tkowe Å›rodowisko nawet
+przy duÅ¼ym obciÄ…Å¼eniu systemu.
 
 %prep
 %setup -q -n rc-scripts-%{version}
