@@ -37,8 +37,8 @@ przy dużym obciążeniu systemu.
 
 %prep
 %setup -q -n rc-scripts-%{version}
-%patch0 -p1
-%patch1 -p1
+%patch -P0 -p1
+%patch -P1 -p1
 
 %build
 %{__make} -C src/filefuncs \
